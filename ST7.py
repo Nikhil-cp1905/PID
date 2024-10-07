@@ -37,36 +37,5 @@ class HW417:
         self.send_command(command[0])  # Send command byte
         self.send_command(command[1])  # Send speed byte
 
-    def stop_motor1(self):
-        self.send_command(0x05)  # Send stop command for motor 1
 
-    def stop_motor2(self):
-        self.send_command(0x06)  # Send stop command for motor 2
-
-    def close(self):
-        """Close the serial connection."""
-        self.ser.close()
-        print("Serial connection closed.")
-
-# Example usage
-if __name__ == "__main__":
-    hw417 = HW417(port='/dev/ttyUSB0', baud_rate=19200)
-
-    # Drive motor 1 forward at full speed
-    hw417.drive_motor1_forward(255)
-
-    # Drive motor 1 backward at half speed
-    hw417.drive_motor1_backward(128)
-
-    # Drive motor 2 forward at full speed
-    hw417.drive_motor2_forward(255)
-
-    # Stop motor 1
-    hw417.stop_motor1()
-
-    # Stop motor 2
-    hw417.stop_motor2()
-
-    # Close the serial connection
-    hw417.close()
 
