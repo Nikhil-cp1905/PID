@@ -4,7 +4,7 @@ import serial
 
 # Attempt to create a serial connection
 try:
-    ser = serial.Serial('/dev/pts/2', 9600, timeout=1)  # Adjust as needed
+    ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)  # Adjust as needed
     print(f"Connected to {ser.portstr}")  # Confirm connection
 except serial.SerialException as e:
     print(f"Error: {e}")
